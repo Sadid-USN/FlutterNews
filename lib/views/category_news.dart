@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news/helper/CategoryNewsClass.dart';
 import 'package:flutter_news/helper/articleModel.dart';
-
 import 'article_view.dart';
-//import 'home.dart';
 
 class CategoryNews extends StatefulWidget {
   final String categoty;

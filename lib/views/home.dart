@@ -38,21 +38,38 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Flutter'),
-            Text(
-              'News',
-              style: TextStyle(color: Colors.blue),
-            )
-          ],
+        title: ShaderMask(
+          shaderCallback: (bounds) => RadialGradient(
+            center: Alignment.topCenter,
+            radius: 1.0,
+            colors: [
+              Colors.deepOrange,
+              Colors.yellow[800],
+            ],
+            tileMode: TileMode.mirror,
+          ).createShader(bounds),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Flutter',
+                style: TextStyle(color: Colors.yellow),
+              ),
+              Text('News'),
+            ],
+          ),
         ),
       ),
       body: _loading
           ? Center(
               child: Container(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.green,
+                  strokeWidth: 8,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    Colors.blueAccent,
+                  ),
+                ),
               ),
             )
           : SingleChildScrollView(
