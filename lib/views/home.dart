@@ -36,7 +36,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         elevation: 0.0,
         title: ShaderMask(
           shaderCallback: (bounds) => RadialGradient(
@@ -52,10 +54,10 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Flutter',
-                style: TextStyle(color: Colors.yellow),
+                'Новости',
+                style: TextStyle(
+                    color: Colors.yellow, fontWeight: FontWeight.bold),
               ),
-              Text('News'),
             ],
           ),
         ),
@@ -136,7 +138,7 @@ class CategoryTitle extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(right: 10),
         child: Stack(
-          children: <Widget>[
+          children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: CachedNetworkImage(
@@ -152,14 +154,14 @@ class CategoryTitle extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
-                color: Colors.black38,
+                color: Colors.black12,
               ),
               child: Text(
                 categoryName,
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -190,11 +192,11 @@ class BlogTitle extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 10),
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 2),
         child: Column(
-          children: <Widget>[
+          children: [
             ClipRRect(
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(5),
                 child: Image.network(imageUrl)),
             SizedBox(
               height: 5,

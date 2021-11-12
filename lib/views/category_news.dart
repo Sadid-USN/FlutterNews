@@ -36,11 +36,8 @@ class _CategoryNewsState extends State<CategoryNews> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Flutter'),
-            Text(
-              'News',
-              style: TextStyle(color: Colors.blue),
-            )
+            Text('Новости'),
+           
           ],
         ),
         actions: <Widget>[
@@ -59,13 +56,13 @@ class _CategoryNewsState extends State<CategoryNews> {
               ),
             )
           : SingleChildScrollView(
-                child: Container(
+              child: Container(
                 child: Column(
-                  children: <Widget>[
-                    
+                  children: [
                     /// Blog
                     Container(
-                      padding: EdgeInsets.only(top: 5),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 5.0),
                       child: ListView.builder(
                           itemCount: articles.length,
                           physics: ClampingScrollPhysics(),
@@ -82,7 +79,7 @@ class _CategoryNewsState extends State<CategoryNews> {
                   ],
                 ),
               ),
-          ),
+            ),
     );
   }
 }
@@ -112,7 +109,7 @@ class BlogTitle extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 10),
         padding: EdgeInsets.only(top: 10),
         child: Column(
-          children: <Widget>[
+          children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(7),
                 child: Image.network(imageUrl)),

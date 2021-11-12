@@ -7,7 +7,11 @@ class ArticleModel {
   String content;
 
   ArticleModel({
-    this.author, this.title, this.description, this.url, this.urlToImage,
+    this.author, 
+    this.title, 
+    this.description,
+    this.url, 
+    this.urlToImage,
     this.content,
   });
 }
